@@ -1,5 +1,35 @@
 # React + TypeScript + Vite
 
+## 🚀 Netlify Deployment
+
+This frontend is configured for easy deployment to Netlify with a Render backend.
+
+### Prerequisites
+- Backend deployed on Render: `https://url-shortener-93e5.onrender.com`
+
+### Deploy Steps
+1. Fork or clone this repository
+2. Connect your GitHub repo to Netlify
+3. Set build settings:
+   - **Build Command:** `npm run build`
+   - **Publish Directory:** `dist`
+4. Add Environment Variables in Netlify:
+   - `VITE_API_URL=https://url-shortener-93e5.onrender.com`
+5. Deploy!
+
+The `netlify.toml` file handles SPA routing and caching automatically.
+
+### Local Development
+```bash
+npm install
+npm run dev
+```
+Vite's proxy will forward `/api` calls to `http://localhost:8080`.
+
+---
+
+## Vite + React Setup
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
