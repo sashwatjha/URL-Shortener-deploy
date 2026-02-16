@@ -1,0 +1,31 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "frontend/dist"
+
+[build.environment]
+  NODE_ENV = "production"
+  VITE_API_URL = "https://url-shortener-93e5.onrender.com"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, immutable, max-age=31536000"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
