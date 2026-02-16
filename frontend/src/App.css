@@ -1,0 +1,248 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fff;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+h2 {
+  color: #888;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #888;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.url-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.url-input:focus {
+  border-color: #fff;
+}
+
+.url-input::placeholder {
+  color: #555;
+}
+
+.shorten-btn {
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.shorten-btn:hover {
+  background: #ddd;
+}
+
+.shorten-btn:active {
+  transform: scale(0.97);
+}
+
+.shorten-btn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.result-label {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-url-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.short-link {
+  color: #4fc3f7;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  word-break: break-all;
+  min-width: 0;
+}
+
+.short-link:hover {
+  text-decoration: underline;
+}
+
+.copy-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: transparent;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: #222;
+}
+
+.original-url {
+  color: #666;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  margin-top: 0.5rem;
+  word-break: break-all;
+}
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.history-original {
+  color: #555;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  word-break: break-all;
+}
+
+/* ===== Small phones (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .app-container {
+    padding-top: 5vh;
+  }
+
+  .content {
+    padding: 0 1rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .shorten-btn {
+    width: 100%;
+    padding: 0.9rem;
+  }
+
+  .result {
+    padding: 0.85rem;
+  }
+
+  .result-url-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .copy-btn {
+    align-self: flex-start;
+  }
+}
+
+/* ===== Medium phones / Small tablets (481px – 768px) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-container {
+    padding-top: 6vh;
+  }
+
+  .content {
+    max-width: 520px;
+    padding: 0 1.25rem;
+  }
+}
+
+/* ===== Tablets (769px – 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content {
+    max-width: 580px;
+  }
+}
+
+/* ===== Laptops / Desktops (1025px – 1440px) ===== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .content {
+    max-width: 620px;
+  }
+}
+
+/* ===== Large monitors (> 1440px) ===== */
+@media (min-width: 1441px) {
+  .content {
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
